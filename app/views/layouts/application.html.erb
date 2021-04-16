@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <% puts  'before flash loop' %>
+  <% puts  flash.count %>
+  <% flash.each do |message_type, message| %>
+  <% puts  'in flash loop' %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>
