@@ -9,8 +9,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      flash[:danger] = 'Invalid signup details'
-      redirect_to root_path
+      flash.now[:danger] = 'Invalid signup details'
+      render :new
     end
   end
 

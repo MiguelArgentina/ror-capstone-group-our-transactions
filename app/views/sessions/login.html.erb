@@ -1,20 +1,5 @@
 
 
-
-<div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Collapsed content</h5>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
-  </div>
-</div>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
-
 <main>
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -27,23 +12,20 @@
               <div class="container-fluid">
                 <div class="row justify-content-center">
                   <div class="d-flex justify-content-around my-1 w-75">
-              Username: <%= text_field_tag :username, nil, :class => 'border border-primary w-40' %>
+                    Username <%= text_field_tag :username, nil, :class => 'border border-primary ms-2 w-40' %>
                   </div>
-                    <div class="d-flex justify-content-around my-1 w-75">
-              Password: <%= password_field_tag :password, nil, :class => 'border border-primary w-40' %>
+                  <div class="d-flex justify-content-around my-1 w-75">
+                    Password <%= password_field_tag :password, nil, :class => 'border border-primary ms-2 w-40' %>
                   </div>
                 </div>
               </div>
-
-                <%= submit_tag 'Log in', class: 'btn btn-primary my-2 w-25' %>
-
-
+              <%= submit_tag 'Log in', class: 'btn btn-primary my-2 w-25' %>
             <% end %>
           </div>
 
           <div>
             <button type="button" class="btn btn-success mt-4 w-25">
-            <%= link_to 'Sign up', new_user_path, class: 'text-decoration-none text-white' %><br>
+              <%= link_to 'Sign up', new_user_path, class: 'text-decoration-none text-white' %><br>
             </button>
           </div>
         </div>

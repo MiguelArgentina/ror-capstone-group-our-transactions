@@ -1,11 +1,31 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
 
-<div>
-  <h2>New user</h2>
+
+<div class="border border-success rounded-pill">
+  <h2>Sign up</h2>
   <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit 'Create account' %>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="d-flex justify-content-around my-1 w-75">
+          <%= f.label :username %> <%= f.text_field :username, :class => 'border border-success ms-2 w-40' %>
+        </div>
+        <div class="d-flex justify-content-around my-1 w-75">
+          <%= f.label :password %> <%= f.password_field :password, :class => 'border border-success ms-2 w-40' %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit 'Create account', class: 'btn btn-success my-2 w-25' %>
   <% end %>
 </div>
+
+      <div>
+        <button type="button" class="btn btn-primary mt-4 w-25">
+          <%= link_to 'Log in', root_path, class: 'text-decoration-none text-white' %><br>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
