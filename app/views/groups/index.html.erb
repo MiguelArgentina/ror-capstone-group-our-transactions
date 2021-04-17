@@ -1,0 +1,10 @@
+<% @groups.each do |group| %>
+  <div>
+    <%= content_tag(:div, group.id.to_s + ' ' + group.name) %>
+  </div>
+<% end %>
+<div>
+  <%=  @groups.count %>
+</div>
+<button type="button" class="btn btn-primary mt-4 w-25">
+  <%= link_to 'Back home', user_path(session[:user_id]),  class: 'text-decoration-none text-white' %></button></li>

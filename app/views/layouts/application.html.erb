@@ -16,8 +16,13 @@
   <body>
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <h5 class="text-white h4">Collapsed content</h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
+      <h5 class="text-white h4">Menu</h5>
+      <span class="text-muted">
+        <ul>
+          <li><%= link_to 'Home', root_path,  class: 'text-decoration-none text-muted' %></li>
+          <li><%= link_to 'Logout', logout_path,  class: 'text-decoration-none text-muted' %></li>
+        </ul>
+      </span>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">

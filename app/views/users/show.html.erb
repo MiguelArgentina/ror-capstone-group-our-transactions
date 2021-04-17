@@ -2,4 +2,14 @@
 <h1>Welcome, <%= @user.username %></h1>
 <h2>Here you can see your profile</h2>
 
+<ul style="list-style-type: none;">
+  <li><button type="button" class="btn btn-primary mt-4 w-25">
+    <%= link_to 'All my transactions', root_path,  class: 'text-decoration-none text-white' %></button></li>
+  <li><button type="button" class="btn btn-info mt-4 w-25">
+    <%= link_to 'All my external transactions', logout_path,  class: 'text-decoration-none text-dark' %></button></li>
+  <li><button type="button" class="btn btn-secondary mt-4 w-25">
+    <%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-white' %></button></li>
+</ul>
+
+
 <%= link_to 'Logout', logout_path %><br>
