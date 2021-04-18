@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
       flash[:success] = 'Welcome to Group our transactions!'
       redirect_to user_path(@user.id)
     else
-      flash[:danger] = 'Invalid signup details'
-      redirect_to root_path
+      flash.now[:danger] = 'Invalid signup details'
+      render 'sessions/login'
     end
   end
 

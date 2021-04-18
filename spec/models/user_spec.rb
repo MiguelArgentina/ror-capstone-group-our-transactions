@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     expect(user).to_not be_valid
   end
   it 'should have a unique username' do
-    User.create!(username: 'TestUser', password: '123456', id: 1)
+    User.create!(username: 'TestUser', password: '123456')
     test_user = User.new(username: 'TestUser')
     expect(test_user).to_not be_valid
     expect(test_user.errors[:username]).to include('has already been taken')
