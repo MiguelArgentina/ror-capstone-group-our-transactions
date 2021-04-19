@@ -7,4 +7,7 @@
   <%=  @groups.count %>
 </div>
 <button type="button" class="btn btn-primary mt-4 w-25">
-  <%= link_to 'Back home', user_path(session[:user_id]),  class: 'text-decoration-none text-white' %></button></li>
+  <%= link_to 'Create group', new_group_path,  class: 'text-decoration-none text-white' %></button>
+  <br>
+  <button type="button" class="btn btn-primary mt-4 w-25">
+  <%= link_to 'Back home', user_path(session[:user_id]),  class: 'text-decoration-none text-white' %></button>

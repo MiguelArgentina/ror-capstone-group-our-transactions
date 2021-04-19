@@ -1,4 +1,8 @@
 <h1>Group name: &nbsp; <%= @group.name %></h1>
-<h2>Here you can the group details</h2>
+<h2>Here you can see the group details</h2>
 <div>Creator: &nbsp; </div>
-<div>@group.creator_id</div>
+<div><%= @group.creator_id %></div>
+<br>
+<div><%= @group.creator.username %></div>
+
+<%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-dark' %>
