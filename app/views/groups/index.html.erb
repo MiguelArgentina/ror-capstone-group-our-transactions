@@ -1,8 +1,35 @@
+
+<table>
+  <tfoot>
+  <tr>
+    <td colspan="3"> <%= link_to 'New Group', new_group_path %> </td>
+  </tr>
+  </tfoot>
+  <tbody>
+
 <% @groups.each do |group| %>
-  <div>
-    <%= content_tag(:div, group.id.to_s + ' ' + group.name) %>
-  </div>
+
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td class="image">
+      <%= image_tag('no_icon.png', class: 'img-thumbnail me-2', alt: 'Group icon', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
+    </td>
+    <td class="description me-2">
+      <h1><%= group.name %></h1>
+    </td>
+    <td class="actions">
+      <ul>
+        <li><%= link_to 'Show', group %></li>
+        <li><%= link_to 'Edit', edit_group_path(group) %></li>
+        <li> <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+      </ul>
+    </td>
+  </tr>
+
+
 <% end %>
+  </tbody>
+</table>
+
 <div>
   <%=  @groups.count %>
 </div>
