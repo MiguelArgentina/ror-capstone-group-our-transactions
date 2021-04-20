@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    @icons_url = create_icons_array
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @icons_url = create_icons_array
   end
 
   def create
@@ -14,6 +20,20 @@ class UsersController < ApplicationController
     end
   end
 
+  # PATCH/PUT /products/1
+  def update
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.update(user_params)
+        puts 'true in the if'
+        format.html { redirect_to user_path(@user), notice: 'Product details were successfully updated.' }
+      else
+        puts 'false in the if'
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def show
     redirect_to root_path unless session[:user_id]
     @user = User.find(session[:user_id]) if session[:user_id]
@@ -22,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :)
+    params.require(:user).permit(:username, :password, :icon)
   end
 
   def create_icons_array

@@ -1,12 +1,22 @@
 
 <h1>Welcome, <%= @user.username %></h1>
 <h2>Here you can see your profile</h2>
+<br>
+<%= image_tag(@user.icon.nil? ? 'users-avatars/nousericon.png' : 'users-avatars/' + @user.icon, class: 'img-thumbnail me-2', alt: 'User avatar', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
+<br>
+<%= link_to 'Edit profile', edit_user_path,  class: 'text-decoration-none text-dark' %>
+<br>
+<div>Groups: &nbsp; </div>
+<div><%= @user.groups.count %></div>
+<div>Activities: &nbsp; </div>
+<div><%= @user.activities.count %></div>
+
 
 <ul style="list-style-type: none;">
   <li><button type="button" class="btn btn-primary mt-4 w-25">
-    <%= link_to 'All my transactions', root_path,  class: 'text-decoration-none text-white' %></button></li>
+    <%= link_to 'All my activities', root_path,  class: 'text-decoration-none text-white' %></button></li>
   <li><button type="button" class="btn btn-info mt-4 w-25">
-    <%= link_to 'All my external transactions', logout_path,  class: 'text-decoration-none text-dark' %></button></li>
+    <%= link_to 'All my external activities', logout_path,  class: 'text-decoration-none text-dark' %></button></li>
   <li><button type="button" class="btn btn-secondary mt-4 w-25">
     <%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-white' %></button></li>
 </ul>
