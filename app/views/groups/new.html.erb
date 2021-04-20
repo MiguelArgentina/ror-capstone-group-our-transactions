@@ -4,7 +4,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= render 'form', group: @group, icons_url: @icons_url %>
+        <%= render 'layouts/new_edit_form', model: @group %>
       </div>
       <div class="panel-footer">
         <p><%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-muted' %></p>
