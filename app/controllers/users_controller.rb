@@ -22,6 +22,22 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :)
   end
+
+  def create_icons_array
+    @icons_url = []
+    @icons_url.append(['Choose an avatar', 'nousericon.png'])
+    @icons_url.append(['Anonymous', 'nousericon.png'])
+    @icons_url.append(['Business man anonymous', 'businessman.png'])
+    @icons_url.append(['Business man young', 'businessyoungman.png'])
+    @icons_url.append(['Business man', 'businessmanface.png'])
+    @icons_url.append(['Father', 'father.png'])
+    @icons_url.append(['Girl', 'girl.png'])
+    @icons_url.append(['Man', 'man.png'])
+    @icons_url.append(['Ninja', 'ninja.png'])
+    @icons_url.append(['Red head woman', 'redheadwoman.png'])
+    @icons_url.append(['Woman', 'woman.png'])
+  end
+
 end

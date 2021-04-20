@@ -11,7 +11,7 @@
 
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td class="image">
-      <%= image_tag('groups/no_icon.png', class: 'img-thumbnail me-2', alt: 'Group icon', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
+      <%= image_tag(group.icon.nil? ? 'groups/noicon.png' : 'groups/' + group.icon, class: 'img-thumbnail me-2', alt: 'Group icon', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
     </td>
     <td class="description me-2">
       <h1><%= group.name %></h1>

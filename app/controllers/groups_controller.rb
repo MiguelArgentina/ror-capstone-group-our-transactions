@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @icons_url = create_icons_array
   end
 
   def create
@@ -14,8 +15,8 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to @group
     else
-      flash.now[:danger] = 'Invalid group details'
-      render :new
+      flash[:danger] = 'Invalid group details'
+      redirect_to new_group_path
     end
   end
 
@@ -26,6 +27,7 @@ class GroupsController < ApplicationController
   # GET /group/1/edit
   def edit
     @group = Group.find(params[:id])
+    @icons_url = create_icons_array
   end
 
   # PATCH/PUT /products/1
@@ -53,5 +55,26 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :icon)
+  end
+
+  def create_icons_array
+    @icons_url = []
+    @icons_url.append(['Choose an avatar', 'noicon.png'])
+    @icons_url.append(['Anonymous', 'noicon.png'])
+    @icons_url.append(['Basket ball', 'basketball-ball.png'])
+    @icons_url.append(['Cycling', 'bicycle.png'])
+    @icons_url.append(['Weightlifting', 'dumbbell.png'])
+    @icons_url.append(['Skating', 'figure-skating.png'])
+    @icons_url.append(['Fitness', 'fitness.png'])
+    @icons_url.append(['Jogging', 'jogging.png'])
+    @icons_url.append(['Martial arts', 'kimono.png'])
+    @icons_url.append(['Home workout', 'lunges.png'])
+    @icons_url.append(['Individual sports', 'sport.png'])
+    @icons_url.append(['Team sports', 'sports.png'])
+    @icons_url.append(['Stretching', 'stretching.png'])
+    @icons_url.append(['Swimming', 'swimmer.png'])
+    @icons_url.append(['Treadmill', 'treadmill.png'])
+    @icons_url.append(['Cardio', 'triangle.png'])
+    @icons_url.append(['Yoga', 'yoga.png'])
   end
 end
