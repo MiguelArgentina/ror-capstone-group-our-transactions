@@ -3,12 +3,16 @@
 <%= f.select :icon, @icons_url %>
 
 
+
 <div class="images_wrapper d-inline-flex flex-wrap border border-primary rounded my-2">
 <% @icons_url.each_with_index { |photo, i| %>
+
   <%  next if i == 0 %>
+
+
   <div class="col-wrapper col-2">
         <div class="card m-2 align-items-center" style="width: 80%;">
-          <%=  image_tag('groups/' + photo[1], class: 'card-img-top mt-1', alt: photo[0], style: 'width: 4rem;')  %>
+          <%=  image_tag( controller_name + photo[1], class: 'card-img-top mt-1', alt: photo[0], style: 'width: 4rem;')  %>
           <div class="card-body">
             <p class="card-text text-break" style="font-size:0.85rem;"><%=  photo[0]  %></p>
           </div>

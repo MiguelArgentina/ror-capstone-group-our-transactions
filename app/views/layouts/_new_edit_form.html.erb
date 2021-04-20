@@ -1,0 +1,28 @@
+<%= form_with(model: model) do |f| %>
+
+  <% if model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(model.errors.count, "error") %> prohibited this instance from being saved:</h2>
+
+      <ul>
+        <% model.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field field_name, class: 'form-control mb-4', autofocus: true %>
+  </div>
+
+
+
+  <%= render 'layouts/icons', icons_url: @icons_url, f: f %>
+
+
+  <div class="actions my-4">
+    <%= f.submit  class: "btn btn-primary" %>
+  </div>
+<% end %>

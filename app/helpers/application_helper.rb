@@ -8,6 +8,22 @@ module ApplicationHelper
     @current_user ||= User.find_by_id(session[:user_id]) if !!session[:user_id]
   end
 
+  def controller_name
+    if controller.controller_name == 'groups'
+      'groups/'
+    else
+      'users-avatars/'
+    end
+  end
+
+  def field_name
+    if controller.controller_name == 'groups'
+      :name
+    else
+      :username
+    end
+  end
+
   def navbar_links
     if logged_in?
       render 'layouts/logged_in_user_links'
