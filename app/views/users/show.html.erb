@@ -16,22 +16,21 @@
 </div>
 
 
-<div class='user-menu-options'>
+<div class='user-menu-options mb-5'>
   <div><i class="main-screen-icons material-icons me-3">directions_run</i>
       <%= link_to 'All my activities', activities_path, class: '' %>
   </div>
   <div><i class="main-screen-icons material-icons me-3">directions_walk</i>
-      <%= link_to 'All my external activities', activities_path(ungrouped: true), class: 'text-decoration-none' %>
+      <%= link_to 'All my external activities', activities_path(ungrouped: true) , class: 'text-decoration-none' %>
   </div>
   <div><i class="main-screen-icons material-icons me-3">groups</i>
       <%= link_to 'All groups', groups_path, class: 'text-decoration-none' %>
   </div>
 </div>
-<br>
-<div>Groups: &nbsp;</div>
-<div><%= @user.groups.count %></div>
-<div>Activities: &nbsp;</div>
-<div><%= @user.activities.count %></div>
 
-
-<%= link_to 'Logout', logout_path %><br>
+<%= link_to logout_path, class: 'edit-profile-text  text-decoration-none text-center' do %>
+  <div class="add-group-wrapper d-block">
+    <i class="material-icons logout-button">close</i>
+    <p>Logout</p>
+  </div>
+<% end %>
