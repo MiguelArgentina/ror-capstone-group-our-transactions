@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @icons_url = create_icons_array
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         puts 'true in the if'
-        format.html { redirect_to user_path(@user), notice: 'Product details were successfully updated.' }
+        format.html { redirect_to user_path(@user), notice: 'User details were successfully updated.' }
       else
         flash.now[:danger] = 'Invalid signup details'
         format.html { render :'users/edit', status: :unprocessable_entity }

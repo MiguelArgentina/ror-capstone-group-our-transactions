@@ -36,7 +36,7 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     respond_to do |format|
       if group.update(group_params)
-        format.html { redirect_to group, notice: 'Product details were successfully updated.' }
+        format.html { redirect_to group, notice: 'Group details were successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
