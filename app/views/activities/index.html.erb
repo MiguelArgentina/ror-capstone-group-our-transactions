@@ -1,0 +1,60 @@
+<h1 class="group-index-title text-center mt-2 mb-4"><%= activities_title %></h1>
+
+<div class="total-minutes container-fluid d-flex justify-content-between mb-4">
+  <div>Total minutes: &nbsp;</div>
+  <div><%= @activities.sum(:amount) %>&nbsp;mins.</div>
+</div>
+
+<table class="w-100 mb-5">
+
+  <tbody class="groups-listing-table w-100">
+
+  <% @activities.each do |activity| %>
+    <tr class="<%= 'justify-content-around  table_row' %>">
+      <td class="image text-center">
+        <%= image_tag((activity.group.nil? || activity.group.icon.nil?) ? 'groups/noicon.png' : 'groups/' + activity.group.icon, class: 'activity-group_avatar img-thumbnail', alt: 'Group icon') %>
+      </td>
+
+      <td class="description me-2">
+        <div class="container-fluid d-flex justify-content-between align-content-center">
+          <div class="activity-name-date">
+            <h2><%= activity.name %></h2>
+            <h3>Created: <%= activity.created_at.strftime("%B %d, %Y") %></h3>
+          </div>
+          <div class="activity-amount align-self-center">
+            <div class="activity-amount-text"><%= activity.amount %></div>
+            <div>&nbsp; mins.</div>
+          </div>
+        </div>
+      </td>
+      <td class="actions">
+        <ul>
+          <li class="group-options my-1 text-center"><%= link_to 'Show', activity %></li>
+          <li class="group-options my-1 text-center"><%= link_to 'Edit', edit_activity_path(activity) %></li>
+          <li class="group-options my-1 text-center"> <%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+        </ul>
+      </td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+  <%= link_to new_activity_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">add_circle_outline</i>
+      <p>New activity</p>
+    </div>
+  <% end %>
+
+  <%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
+
+</div>

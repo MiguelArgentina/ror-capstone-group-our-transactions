@@ -1,0 +1,8 @@
+<h1>Activity name: &nbsp; <%= @activity.name %></h1>
+<br>
+<h2>Here you can see the activity details</h2>
+<div>Creator: &nbsp; </div>
+<div><%= @activity.author.username %></div>
+<div>Activity amount: &nbsp; </div>
+<div><%= @activity.amount %></div>
+<%= link_to 'All activities', activities_path,  class: 'text-decoration-none text-dark' %>
