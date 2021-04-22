@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.all
+    @groups = Group.all.ordered_by_name
   end
 
   def new
@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @activities = @group.activities.all.ordered_by_date
   end
 
   # GET /group/1/edit

@@ -5,12 +5,12 @@
   <tbody class="groups-listing-table w-100">
 
   <% @groups.each do |group| %>
-    <tr class="<%= 'justify-content-around  table_row' %>">
+    <tr class="<%= 'justify-content-around table_row' %>">
       <td class="image">
         <%= image_tag(group.icon.nil? ? 'groups/noicon.png' : 'groups/' + group.icon, class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
       </td>
 
-      <td class="description me-2">
+      <td class="description ps-3 me-2">
         <h2><%= group.name %></h2>
         <h3>Created: <%= group.created_at.strftime("%B %d, %Y") %></h3>
       </td>
@@ -29,21 +29,19 @@
 </table>
 
 <div class="add-group-wrapper d-flex justify-content-around mt-5">
-<%= link_to new_group_path, class: 'edit-profile-text text-decoration-none text-center' do %>
-  <div class="add-group-wrapper d-block">
-  <i class="material-icons">add_circle_outline</i>
-  <p>Add group</p>
-  </div>
-<% end %>
+  <%= link_to new_group_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">add_circle_outline</i>
+      <p>New group</p>
+    </div>
+  <% end %>
 
 
-<%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
-  <div class="add-group-wrapper d-block">
-    <i class="material-icons">reply</i>
-    <p>Back</p>
-  </div>
-<% end %>
-
-
+  <%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
 
 </div>
