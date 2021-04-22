@@ -22,14 +22,15 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /products/1
   def update
+    @icons_url = create_icons_array
     @user = User.find(params[:id])
     respond_to do |format|
       if @user.update(user_params)
         puts 'true in the if'
         format.html { redirect_to user_path(@user), notice: 'Product details were successfully updated.' }
       else
-        puts 'false in the if'
-        format.html { render :edit, status: :unprocessable_entity }
+        flash.now[:danger] = 'Invalid signup details'
+        format.html { render :'users/edit', status: :unprocessable_entity }
       end
     end
   end

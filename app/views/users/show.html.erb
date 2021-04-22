@@ -1,25 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="user-logo-info text-center mt-4">
+        <%= image_tag(@user.icon.nil? ? 'users-avatars/nousericon.png' : 'users-avatars/' + @user.icon, class: 'img-thumbnail', alt: 'User avatar') %>
+        <div class="user-name text-center"><%= @user.username.capitalize %></div>
 
-<h1>Welcome, <%= @user.username %></h1>
-<h2>Here you can see your profile</h2>
+        <%= link_to edit_user_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+            <i class="material-icons">settings</i>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class='user-menu-options'>
+  <div><i class="main-screen-icons material-icons me-3">directions_run</i>
+      <%= link_to 'All my activities', activities_path, class: '' %>
+  </div>
+  <div><i class="main-screen-icons material-icons me-3">directions_walk</i>
+      <%= link_to 'All my external activities', activities_path(ungrouped: true), class: 'text-decoration-none' %>
+  </div>
+  <div><i class="main-screen-icons material-icons me-3">groups</i>
+      <%= link_to 'All groups', groups_path, class: 'text-decoration-none' %>
+  </div>
+</div>
 <br>
-<%= image_tag(@user.icon.nil? ? 'users-avatars/nousericon.png' : 'users-avatars/' + @user.icon, class: 'img-thumbnail me-2', alt: 'User avatar', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
-<br>
-<%= link_to 'Edit profile', edit_user_path,  class: 'text-decoration-none text-dark' %>
-<br>
-<div>Groups: &nbsp; </div>
+<div>Groups: &nbsp;</div>
 <div><%= @user.groups.count %></div>
-<div>Activities: &nbsp; </div>
+<div>Activities: &nbsp;</div>
 <div><%= @user.activities.count %></div>
-
-
-<ul style="list-style-type: none;">
-  <li><button type="button" class="btn btn-primary mt-4 w-25">
-    <%= link_to 'All my activities', root_path,  class: 'text-decoration-none text-white' %></button></li>
-  <li><button type="button" class="btn btn-info mt-4 w-25">
-    <%= link_to 'All my external activities', logout_path,  class: 'text-decoration-none text-dark' %></button></li>
-  <li><button type="button" class="btn btn-secondary mt-4 w-25">
-    <%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-white' %></button></li>
-</ul>
 
 
 <%= link_to 'Logout', logout_path %><br>

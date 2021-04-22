@@ -7,24 +7,24 @@
 
         <div>
           <div class="border border-primary rounded-pill">
-            <h2>Login</h2>
+            <h1>Login</h1>
             <%= form_tag '/login' do %>
               <div class="container-fluid">
                 <div class="row justify-content-center">
-                  <div class="d-flex justify-content-around my-1 w-75">
+                  <div class="login-fields d-flex justify-content-around my-1 w-75">
                     Username <%= text_field_tag :username, nil, :class => 'border border-primary ms-2 w-40' %>
                   </div>
-                  <div class="d-flex justify-content-around my-1 w-75">
+                  <div class="login-fields d-flex justify-content-around my-1 w-75">
                     Password <%= password_field_tag :password, nil, :class => 'border border-primary ms-2 w-40' %>
                   </div>
                 </div>
               </div>
-              <%= submit_tag 'Log in', class: 'btn btn-primary my-2 w-25' %>
+              <%= submit_tag 'Log in', class: 'login-button btn btn-link my-2 w-25 text-white' %>
             <% end %>
           </div>
 
           <div>
-            <button type="button" class="btn btn-success mt-4 w-25">
+            <button type="button" class="login-button btn btn-link mt-4 w-25">
               <%= link_to 'Sign up', new_user_path, class: 'text-decoration-none text-white' %><br>
             </button>
           </div>
