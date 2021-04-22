@@ -28,6 +28,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @groups = @activity.group.nil? ? nil : @activity.group
   end
 
   # GET /activity/1/edit

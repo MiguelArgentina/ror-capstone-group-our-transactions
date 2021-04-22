@@ -5,6 +5,24 @@
 @import "application.scss";
 
 body {
+  h2 {
+    font-size: 1.3rem;
+    color: rgba($text-color-light, 0.66);
+  }
+  .activity-subtitle {
+    font-size: 1.3rem;
+    color: rgba($text-color-light, 0.66);
+  }
+  .activity-info-text {
+    font-size: 1rem;
+    color: rgba($text-color-light, 0.90);
+  }
+  .activity-group-avatar {
+    height: 4rem;
+  }
+  select {
+    height: 2rem;
+  }
   .image {
     width: 15%;
   }
@@ -17,6 +35,14 @@ body {
       color: $text-color-light;
       font-size: 1.5rem;
     }
+  }
+
+  .author-cell {
+    color: rgba($text-color-light, 0.66);
+    width: 100%;
+    white-space: nowrap;
+    display: table;
+    table-layout: fixed;
   }
 
   .actions {

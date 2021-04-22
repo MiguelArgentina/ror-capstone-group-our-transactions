@@ -1,8 +1,33 @@
-<h1>Activity name: &nbsp; <%= @activity.name %></h1>
-<br>
-<h2>Here you can see the activity details</h2>
-<div>Creator: &nbsp; </div>
-<div><%= @activity.author.username %></div>
-<div>Activity amount: &nbsp; </div>
-<div><%= @activity.amount %></div>
-<%= link_to 'All activities', activities_path,  class: 'text-decoration-none text-dark' %>
+<div class="container-fluid">
+<h1 class="mt-4">Activity name: &nbsp; </h1>
+  <div class="d-flex justify-content-around mt-3">
+    <%= image_tag(@groups.nil? ? 'groups/noicon.png' : 'groups/' + @groups.icon, class: 'activity-group-avatar img-thumbnail', alt: 'Group icon') %>
+<h2 class="mb-5 mt-3"><%= @activity.name %></h2>
+  </div>
+<div>
+
+
+  <div class="activity-subtitle">This activitity was created by: &nbsp; </div>
+<div class="activity-info-text"><%= @activity.author.username %></div>
+</div>
+
+  <div class="mt-3">
+<div class="activity-subtitle">Minutes exercising: &nbsp; </div>
+<div class="activity-info-text"><%= @activity.amount %></div>
+  </div>
+  <div class="mt-3">
+    <div class="activity-subtitle">Date of creation: &nbsp; </div>
+    <div class="activity-info-text"><%= @activity.created_at.strftime("%B %d, %Y") %></div>
+  </div>
+
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+
+  <%= link_to activities_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
+
+</div>
+</div>

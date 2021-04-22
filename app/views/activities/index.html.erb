@@ -34,11 +34,13 @@
           <li class="group-options my-1 text-center"> <%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
         </ul>
       </td>
-
     </tr>
-
+    <tr class="<%= 'justify-content-center  table_row' %>">
+    <td class="author-cell"> Author:  <%= activity.author.username %></td>
+    </tr>
   <% end %>
   </tbody>
+
 </table>
 
 

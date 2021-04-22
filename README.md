@@ -1,25 +1,79 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project: RoR Capstone project: Group my transactions
+## Built With
 
-Things you may want to cover:
+- Ruby 3.0.
+- Rails 6.1.3
 
-* Ruby version
+## Live Demo
 
-* System dependencies
+Visit the [social media website](#)
 
-* Configuration
+## Prerequisites
+- Ruby 3.0.
+- Rails 6.1.3
+- Postgres: >=9.5
+- Node.js
+- Yarn
 
-* Database creation
+## Getting Started
+
+- Open your terminal - Windows: `Win + R`, then type `cmd` | Mac: `Command + space`, then type `Terminal`
+- Navigate to a directory of your choosing using the `cd` command
+- Run this command in your OS terminal: `git clone git@github.com:MiguelArgentina/ror-social-scaffold.git` to get a copy of the project.
+- Navigate to the project's directory using the `cd` command
+- Install gems with: `bundle install`
+- Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+### Usage
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+Run `rspec test` from the command line to run all the tests
+
+### Database model
 - Model:
     [Link to the model](https://lucid.app/lucidchart/invitations/accept/inv_29386635-2ef0-4872-a19f-28caddeadd57?viewport_loc=137%2C-214%2C2517%2C1262%2C0_0)
-* Database initialization
 
-* How to run the test suite
+### Video with a presentation on how the bot works
 
-* Services (job queues, cache servers, search engines, etc.)
+[Link to the video](https://www.loom.com/share/4e785bb6aa1b46a88ca832df3740d493)
 
-* Deployment instructions
+## Author
 
-* ...
+
+### Miguel Gomez
+
+<img width="100" alt="Miguel Gomez Profile Picture" src="https://avatars.githubusercontent.com/u/50305489?s=400&u=2d451ca03611a85431ac4e851ab7a4fc3425bb7d&v=4">
+
+
+* GitHub: [@MiguelArgentina](https://github.com/MiguelArgentina)
+* twitter - https://twitter.com/Qete_arg
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/MiguelArgentina/microverse-ruby-capstone-project/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](https://github.com/MiguelArgentina/microverse-ruby-capstone-project/blob/main/LICENSE) licensed.

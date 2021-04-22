@@ -24,10 +24,12 @@ $text-color-light: #dedede;
 
 body {
   background: linear-gradient(180deg, rgba(55, 120, 194, 1) 35%, rgba(39, 88, 140, 1) 100%);
-
+   label {
+     color: rgba($text-color-light, 0.85);
+   }
   .navbar, .navbar-content-wrapper,
   .navbar-links {
-    background-color: #3778c2;
+    background-color: $main-color;
   }
   .avatar-image {
     width: 4rem;
