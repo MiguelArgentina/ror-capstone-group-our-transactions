@@ -1,10 +1,45 @@
-<h1>Group name: &nbsp; <%= @group.name %></h1>
-<br>
-<%= image_tag(@group.icon.nil? ? 'groups/noicon.png' : 'groups/' + @group.icon, class: 'img-thumbnail me-2', alt: 'Group avatar', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
-<br>
-<h2>Here you can see the group details</h2>
-<div>Creator: &nbsp; </div>
-<div><%= @group.creator.username %></div>
-<div>Activities: &nbsp; </div>
-<div><%= @group.activities.count %></div>
-<%= link_to 'All groups', groups_path,  class: 'text-decoration-none text-dark' %>
+<span></span>
+<div class="group-title d-block container-fluid mt-4 text-center">
+  <%= image_tag(@group.icon.nil? ? 'groups/noicon.png' : 'groups/' + @group.icon, class: 'group_avatar img-thumbnail me-2', alt: 'Group avatar') %>
+  <h1 class="group-name"><%= @group.name %></h1>
+</div>
+
+<div class="group-subtitle my-3 ms-3">Group transactions</div>
+<div class="total-minutes container-fluid d-flex justify-content-between mb-4">
+  <div>Total minutes: &nbsp;</div>
+  <div><%= @activities.sum(:amount) %>&nbsp;mins.</div>
+</div>
+
+
+
+
+<table class="w-100">
+
+  <tbody class="groups-listing-table w-100">
+
+  <% @activities.each do |activity| %>
+
+    <tr class="<%= 'justify-content-around  table_row' %>">
+      <td class="image py-3">
+        <%= image_tag(@group.icon.nil? ? 'groups/noicon.png' : 'groups/' + @group.icon, class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+      </td>
+      <td class="description me-2">
+        <h2><%= activity.name %></h2>
+        <h3>Created: <%= activity.created_at.strftime("%B %d, %Y") %></h3>
+      </td>
+      <td class="me-2">
+        <h2 class="amount"><%= activity.amount.to_s %>&nbsp; mins.</h2>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to groups_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+  <div class="add-group-wrapper d-block">
+    <i class="material-icons">reply</i>
+    <p>Back</p>
+  </div>
+<% end %>

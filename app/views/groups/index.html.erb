@@ -1,40 +1,49 @@
+<h1 class="group-index-title text-center mt-2 mb-4">Groups listing</h1>
 
-<table>
-  <tfoot>
-  <tr>
-    <td colspan="3"> <%= link_to 'New Group', new_group_path %> </td>
-  </tr>
-  </tfoot>
-  <tbody>
+<table class="w-100">
 
-<% @groups.each do |group| %>
+  <tbody class="groups-listing-table w-100">
 
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td class="image">
-      <%= image_tag(group.icon.nil? ? 'groups/noicon.png' : 'groups/' + group.icon, class: 'img-thumbnail me-2', alt: 'Group icon', style: 'display: inline-block; margin: auto; width: 2.5rem;') %>
-    </td>
-    <td class="description me-2">
-      <h1><%= group.name %></h1>
-    </td>
-    <td class="actions">
-      <ul>
-        <li><%= link_to 'Show', group %></li>
-        <li><%= link_to 'Edit', edit_group_path(group) %></li>
-        <li> <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
-      </ul>
-    </td>
-  </tr>
+  <% @groups.each do |group| %>
+    <tr class="<%= 'justify-content-around  table_row' %>">
+      <td class="image">
+        <%= image_tag(group.icon.nil? ? 'groups/noicon.png' : 'groups/' + group.icon, class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+      </td>
 
+      <td class="description me-2">
+        <h2><%= group.name %></h2>
+        <h3>Created: <%= group.created_at.strftime("%B %d, %Y") %></h3>
+      </td>
+      <td class="actions">
+        <ul>
+          <li class="group-options my-1 me-1 text-center"><%= link_to 'Show', group %></li>
+          <li class="group-options my-1 me-1 text-center"><%= link_to 'Edit', edit_group_path(group) %></li>
+          <li class="group-options my-1 me-1 text-center"> <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+        </ul>
+      </td>
 
-<% end %>
+    </tr>
+
+  <% end %>
   </tbody>
 </table>
 
-<div>
-  <%=  @groups.count %>
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+<%= link_to new_group_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+  <div class="add-group-wrapper d-block">
+  <i class="material-icons">add_circle_outline</i>
+  <p>Add group</p>
+  </div>
+<% end %>
+
+
+<%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
+  <div class="add-group-wrapper d-block">
+    <i class="material-icons">reply</i>
+    <p>Back</p>
+  </div>
+<% end %>
+
+
+
 </div>
-<button type="button" class="btn btn-primary mt-4 w-25">
-  <%= link_to 'Create group', new_group_path,  class: 'text-decoration-none text-white' %></button>
-  <br>
-  <button type="button" class="btn btn-primary mt-4 w-25">
-  <%= link_to 'Back home', user_path(session[:user_id]),  class: 'text-decoration-none text-white' %></button>
