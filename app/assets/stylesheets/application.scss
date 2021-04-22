@@ -10,10 +10,30 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+*= require material_icons
+*= require_tree .
  *= require_self
  */
 
-.list_line_even {
-    background-color: #ccc;
+
+
+$main-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+$text-color-light: #dedede;
+
+body {
+  background: linear-gradient(180deg, rgba(55, 120, 194, 1) 35%, rgba(39, 88, 140, 1) 100%);
+
+  .navbar, .navbar-content-wrapper,
+  .navbar-links {
+    background-color: #3778c2;
+  }
+  .avatar-image {
+    width: 4rem;
+  }
+  .avatar-image-text {
+    font-size: 0.55rem;
+  }
+
 }

@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RorCapstone</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RorCapstone</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine">
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
-  </head>
-
-  <body class="ms-3">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 
+</head>
 
-  <%= render 'layouts/header' %>
+<body class="">
 
+
+<%= render 'layouts/header' %>
+<div class="">
   <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%=message_type %> alert-dismissible fade show" role="alert">
+    <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert">
       <%= content_tag(:div, message) %>
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-
-
   <% end %>
 
-    <%= yield %>
-
-  </body>
+  <%= yield %>
+</div>
+</body>
 </html>

@@ -22,7 +22,21 @@
   <%= render 'layouts/icons', icons_url: @icons_url, f: f %>
 
 
-  <div class="actions my-4">
-    <%= f.submit  class: "btn btn-primary" %>
+  <div class="add-group-wrapper d-flex justify-content-around mt-5">
+
+    <%= f.button :type => "submit", style: 'border-style: none; background-color: transparent;' do %>
+      <div class="add-group-wrapper d-block">
+        <i class="material-icons">save_alt</i>
+      </div>
+    <% end %>
+
+    <%= link_to groups_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+      <div class="add-group-wrapper d-block">
+        <i class="material-icons">reply</i>
+        <p>Back</p>
+      </div>
+    <% end %>
+
   </div>
+
 <% end %>
