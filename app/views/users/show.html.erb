@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <div class="user-logo-info text-center mt-4">
-        <%= image_tag(@user.icon.nil? ? 'users-avatars/nousericon.png' : 'users-avatars/' + @user.icon, class: 'img-thumbnail', alt: 'User avatar') %>
+        <%= image_tag(icon_url_for_user, class: 'img-thumbnail', alt: 'User avatar') %>
         <div class="user-name text-center"><%= @user.username.capitalize %></div>
 
         <%= link_to edit_user_path, class: 'edit-profile-text text-decoration-none text-center' do %>
