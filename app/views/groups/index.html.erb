@@ -7,12 +7,12 @@
   <% @groups.each do |group| %>
     <tr class="<%= 'justify-content-around table_row' %>">
       <td class="image">
-        <%= image_tag(group.icon.nil? ? 'groups/noicon.png' : 'groups/' + group.icon, class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+        <%= image_tag(groups_image_url(group), class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
       </td>
 
       <td class="description ps-3 me-2">
         <h2><%= group.name %></h2>
-        <h3>Created: <%= group.created_at.strftime("%B %d, %Y") %></h3>
+        <h3><%= group.created_at.strftime("%b %d, %H:%M, %Y") %></h3>
       </td>
       <td class="actions">
         <ul>

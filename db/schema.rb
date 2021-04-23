@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_192535) do
     t.float "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id", "created_at"], name: "index_activities_on_author_id_and_created_at"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_192535) do
     t.integer "creator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["creator_id", "name"], name: "index_groups_on_creator_id_and_name"
   end
 
   create_table "users", force: :cascade do |t|

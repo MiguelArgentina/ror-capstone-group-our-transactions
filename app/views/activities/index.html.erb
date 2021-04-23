@@ -12,14 +12,14 @@
   <% @activities.each do |activity| %>
     <tr class="<%= 'justify-content-around  table_row' %>">
       <td class="image text-center">
-        <%= image_tag((activity.group.nil? || activity.group.icon.nil?) ? 'groups/noicon.png' : 'groups/' + activity.group.icon, class: 'activity-group_avatar img-thumbnail', alt: 'Group icon') %>
+        <%= image_tag(icon_url_for_activity_index(activity), class: 'activity-group_avatar img-thumbnail my-2', alt: 'Group icon') %>
       </td>
 
       <td class="description me-2">
         <div class="container-fluid d-flex justify-content-between align-content-center">
           <div class="activity-name-date">
             <h2><%= activity.name %></h2>
-            <h3>Created: <%= activity.created_at.strftime("%B %d, %Y") %></h3>
+            <h3><%= activity.created_at.strftime("%b %d, %H:%M, %Y") %></h3>
           </div>
           <div class="activity-amount align-self-center">
             <div class="activity-amount-text"><%= activity.amount %></div>
