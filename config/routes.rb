@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
   resources :groups, only: [:new, :create, :edit, :update, :show, :destroy, :index]
   resources :activities, only: [:new, :create, :edit, :update, :show, :destroy, :index]
+  resources :scoreboards, only: [:index]
   root 'sessions#login'
 
 

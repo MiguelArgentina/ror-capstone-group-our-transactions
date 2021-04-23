@@ -1,0 +1,33 @@
+<h1 class="group-index-title text-center mt-2 mb-4">Scoreboard</h1>
+
+<table class="w-100">
+
+  <tbody class="groups-listing-table w-100">
+
+  <% @users.each do |user| %>
+    <tr class="<%= 'justify-content-around table_row' %>">
+      <td class="image">
+        <%= image_tag(users_image_url(user), class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+      </td>
+
+      <td class="description ps-3 me-2">
+        <h2><%= user.username %></h2>
+        <h3><%= user.activities.sum(:amount) %></h3>
+      </td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+
+  <%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
+
+</div>
