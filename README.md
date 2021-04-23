@@ -2,6 +2,18 @@
 
 ## Project: RoR Capstone project: Group my transactions
 
+## Features
+
+- This app is for having a record of all physical activities you practice 
+- The app lets you signup with a usernam and password for security
+- You can create Activities and group them (or not)
+- You can create groups for grouping all your activities
+
+Try it, share it with your family and compete against each other!
+
+- Extra features to be added: Users scoreboard
+
+
 ## Screenshots
 
 Login page:
@@ -29,7 +41,7 @@ Activities page:
 
 ## Live Demo
 
-Visit the [social media website](#)
+Visit the [Group my activities](https://obscure-earth-54566.herokuapp.com/users/1) webapp to test my app
 
 ## Prerequisites
 - Ruby 3.0.
