@@ -13,6 +13,9 @@ Try it, share it with your family and compete against each other!
 
 - Extra features to be added: Users scoreboard
 
+## Presentation video
+
+[Clic here to see the video](https://www.loom.com/share/d4f26ef147ee4e78b570d06e6411d8be)
 
 ## Screenshots
 
