@@ -1,8 +1,12 @@
 <div class="container-fluid">
 <h1 class="mt-4">Activity name: &nbsp; </h1>
   <div class="d-flex justify-content-around mt-3">
-    <%= image_tag(@groups.nil? ? 'groups/noicon.png' : 'groups/' + @groups.icon, class: 'activity-group-avatar img-thumbnail', alt: 'Group icon') %>
-<h2 class="mb-5 mt-3"><%= @activity.name %></h2>
+    <div class="d-block text-center">
+      <%= image_tag(icon_url_for_activity_show, class: 'activity-group-avatar img-thumbnail', alt: 'Group icon') %>
+      <h2 class="mb-5 mt-3 activity-group-name"><%=  group_icon_div_text %></h2>
+    </div>
+    <h2 class="mb-5 mt-3 activity-name"><%= @activity.name %></h2>
+
   </div>
 <div>
 
