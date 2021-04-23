@@ -7,6 +7,7 @@ class ActivitiesController < ApplicationController
                   else
                     current_user.activities.all
                   end
+    puts 'hello'
   end
 
   def new
