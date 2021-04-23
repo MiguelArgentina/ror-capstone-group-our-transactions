@@ -5,13 +5,13 @@
 ## Features
 
 - This app is for having a record of all physical activities you practice
-- The app lets you signup with a usernam and password for security
+- The app lets you signup with a username and password for security
 - You can create Activities and group them (or not)
 - You can create groups for grouping all your activities
 
 Try it, share it with your family and compete against each other!
 
-- Extra features to be added: Users scoreboard
+- Extra feature added: Users scoreboard
 
 ## Presentation video
 
@@ -37,6 +37,10 @@ Group details page:
 Activities page:
 ![alt text](screenshots/scrshot_activities.png "Activities page screenshot")
 
+Scoreboard page:
+![alt text](screenshots/scrshot_scoreboard.png "Scoreboard page screenshot")
+
+
 ## Built With
 
 - Ruby 3.0.
@@ -57,9 +61,10 @@ Visit the [Group my activities](https://obscure-earth-54566.herokuapp.com/users/
 
 - Open your terminal - Windows: `Win + R`, then type `cmd` | Mac: `Command + space`, then type `Terminal`
 - Navigate to a directory of your choosing using the `cd` command
-- Run this command in your OS terminal: `git clone git@github.com:MiguelArgentina/ror-social-scaffold.git` to get a copy of the project.
+- Run this command in your OS terminal: `git clone git@github.com:MiguelArgentina/ror-capstone-group-our-transactions.git` to get a copy of the project.
 - Navigate to the project's directory using the `cd` command
-- Install gems with: `bundle install`
+- For development usage, please checkout to the navigation branch using this command:  `git checkout navigation`
+- Install gems with: `bundle install` (this will also install rspec gem for testing purposes)
 - Setup database with:
 
 ```
@@ -79,11 +84,8 @@ Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
-Run `rspec test` from the command line to run all the tests
+Run `bundle exec rspec -f d` from the command line to run all tests. The optional parameters will provide detailed information for each one
 
-### Database model
-- Model:
-  [Link to the model](https://lucid.app/lucidchart/invitations/accept/inv_29386635-2ef0-4872-a19f-28caddeadd57?viewport_loc=137%2C-214%2C2517%2C1262%2C0_0)
 
 ### Video with a presentation on how the bot works
 
@@ -100,16 +102,21 @@ Run `rspec test` from the command line to run all the tests
 * GitHub: [@MiguelArgentina](https://github.com/MiguelArgentina)
 * twitter - https://twitter.com/Qete_arg
 
-## 🤝 Contributing
+### Acknowledgments
+
+- Design based on this [project](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) by [Gregoire Vella](https://www.behance.net/gregoirevella)
+
+
+### 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/MiguelArgentina/ror-capstone-group-our-transactions/issues).
 
-## Show your support
+### Show your support
 
 Give a ⭐️ if you like this project!
 
-## 📝 License
+### 📝 License
 
 This project is [MIT](https://github.com/MiguelArgentina/microverse-ruby-capstone-project/blob/main/LICENSE) licensed.
