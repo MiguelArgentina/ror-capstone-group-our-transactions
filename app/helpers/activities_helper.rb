@@ -19,17 +19,15 @@ module ActivitiesHelper
     @groups.nil? ? 'No group' : @groups.name
   end
 
-  def load_text_or_select(f)
+  def load_text_or_select(form)
     if params[:add_activity] || action_name == 'edit'
-      render 'activities/textlabel_for_names', f: f
+      render 'activities/textlabel_for_names', f: form
     else
-      render 'activities/select_with_names', f: f
+      render 'activities/select_with_names', f: form
     end
   end
 
   def load_new_activity_icon
-    if params[:add_activity].nil? && action_name != 'edit'
-      render 'activities/load_new_activity_icon'
-       end
+    render 'activities/load_new_activity_icon' if params[:add_activity].nil? && action_name != 'edit'
   end
 end
