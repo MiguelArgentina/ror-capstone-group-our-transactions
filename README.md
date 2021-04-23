@@ -1,6 +1,27 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 ## Project: RoR Capstone project: Group my transactions
+
+## Screenshots
+
+Login page:
+![alt text](screenshots/scrshot_login.png "Login page screenshot")
+
+Signup page:
+![alt text](screenshots/scrshot_signup.png "Signup page screenshot")
+
+Welcome page:
+![alt text](screenshots/scrshot_welcome.png "Welcome page screenshot")
+
+Groups page:
+![alt text](screenshots/scrshot_groups.png "Groups page screenshot")
+
+Group details page:
+![alt text](screenshots/scrshot_group_dtl.png "Group details page screenshot")
+
+Activities page:
+![alt text](screenshots/scrshot_activities.png "Activities page screenshot")
+
 ## Built With
 
 - Ruby 3.0.
@@ -68,7 +89,7 @@ Run `rspec test` from the command line to run all the tests
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/MiguelArgentina/microverse-ruby-capstone-project/issues).
+Feel free to check the [issues page](https://github.com/MiguelArgentina/ror-capstone-group-our-transactions/issues).
 
 ## Show your support
 
