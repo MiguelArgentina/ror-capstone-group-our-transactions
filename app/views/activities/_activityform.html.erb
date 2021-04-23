@@ -3,14 +3,21 @@
   <%= form_for @activity do |f| %>
     <div class="container-fluid">
       <div class="row justify-content-between">
-        <div class="d-flex justify-content-between my-1 w-75">
-          <%= f.label :name %> <%= f.text_field :name, :class => 'border border-success ms-2 w-40' %>
+        <div class="d-flex justify-content-between my-1">
+
+          <%= load_text_or_select(f) %>
+          <%= load_new_activity_icon %>
+
+
         </div>
+
+
         <div class="d-flex justify-content-between my-2 w-75">
           <%= f.label :amount %> <%= f.number_field :amount, in: -10000.0..10000.0, step: 0.01, :class => 'border border-success ms-2 w-40' %>
         </div>
         <div class="d-flex justify-content-around my-1 w-75">
-          <% f.label :group_id %> <% f.text_field :group_id, :value => "158", :class => 'border border-success ms-2 w-40' %>
+          <% f.label :group_id %>
+          <% f.text_field :group_id, :value => "158", :class => 'border border-success ms-2 w-40' %>
         </div>
 
         <%= render 'groups-listing', icons_url: @icons_url, f: f %>

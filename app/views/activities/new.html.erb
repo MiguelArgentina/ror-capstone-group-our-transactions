@@ -4,7 +4,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-body">
-        <%= render 'activities/activityform', model: @activity, icons: @icons_url, groups_array: @groups_array %>
+        <%= render 'activities/activityform', model: @activity, icons: @icons_url, groups_array: @groups_array, add_activity: params[:add_activity]%>
       </div>
 
     </div>

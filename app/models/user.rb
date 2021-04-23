@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :password, presence: true
 
 
-  def ungrouped_activities_from_user
-    Activity.includes(:author).where(group_id: nil)
+  def ungrouped_activities_from_user(current_user_id)
+    Activity.includes(:author).where(group_id: nil).where(author_id: current_user_id)
   end
 end

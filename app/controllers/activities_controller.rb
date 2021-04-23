@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
     current_user = User.find(session[:user_id])
 
     @activities = if params[:ungrouped]
-                    current_user.ungrouped_activities_from_user
+                    current_user.ungrouped_activities_from_user(current_user.id)
                   else
                     User.find(session[:user_id]).activities.all
                   end
@@ -13,6 +13,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new
     @groups = Group.all
     @groups_array = create_groups_array
+    @activities_created = activities_created
   end
 
   def create
@@ -36,6 +37,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @groups = Group.all
     @groups_array = create_groups_array
+    @activities_created = activities_created
   end
 
   # PATCH/PUT /activities/1
@@ -60,6 +62,10 @@ class ActivitiesController < ApplicationController
   end
 
   private
+
+  def activities_created
+    Activity.ascending.distinct.pluck(:name)
+  end
 
   def activity_params
     params.require(:activity).permit(:name, :amount, :group_id)
