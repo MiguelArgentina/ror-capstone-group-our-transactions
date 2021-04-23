@@ -7,7 +7,7 @@
 <div class="group-subtitle my-3 ms-3">Group transactions</div>
 <div class="total-minutes container-fluid d-flex justify-content-between mb-4">
   <div>Total minutes: &nbsp;</div>
-  <div><%= @activities.sum(:amount).round(2) %>&nbsp;mins.</div>
+  <div><%= @group.activities.sum(:amount).round(2) %>&nbsp;mins.</div>
 </div>
 
 

@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
     @activities = if params[:ungrouped]
                     current_user.ungrouped_activities_from_user(current_user.id)
                   else
-                    User.find(session[:user_id]).activities.all
+                    current_user.activities.all
                   end
   end
 
