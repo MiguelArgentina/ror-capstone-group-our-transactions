@@ -61,5 +61,4 @@ class UsersController < ApplicationController
     @icons_url.append(['Red head woman', 'redheadwoman.png'])
     @icons_url.append(['Woman', 'woman.png'])
   end
-
 end

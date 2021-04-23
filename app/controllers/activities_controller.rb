@@ -1,6 +1,4 @@
 class ActivitiesController < ApplicationController
-
-
   def index
     @activities = if params[:ungrouped]
                     User.find(session[:user_id]).activities.all.where(group_id: nil)
@@ -66,7 +64,7 @@ class ActivitiesController < ApplicationController
   end
 
   def create_groups_array
-    arr = Group.all.pluck( :name, :id)
+    arr = Group.all.pluck(:name, :id)
     arr.insert(0, ['No group', nil])
   end
 
@@ -90,5 +88,4 @@ class ActivitiesController < ApplicationController
     @icons_url.append(%w[Cardio triangle.png])
     @icons_url.append(%w[Yoga yoga.png])
   end
-
 end

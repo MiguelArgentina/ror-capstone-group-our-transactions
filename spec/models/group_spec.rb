@@ -13,4 +13,3 @@ RSpec.describe Group, type: :model do
     expect(test_group.errors[:name]).to include('has already been taken')
   end
 end
-

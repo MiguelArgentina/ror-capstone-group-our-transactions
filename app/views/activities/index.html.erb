@@ -2,7 +2,7 @@
 
 <div class="total-minutes container-fluid d-flex justify-content-between mb-4">
   <div>Total minutes: &nbsp;</div>
-  <div><%= @activities.sum(:amount) %>&nbsp;mins.</div>
+  <div><%= @activities.sum(:amount).round(2) %>&nbsp;mins.</div>
 </div>
 
 <table class="w-100 mb-5">
@@ -35,9 +35,7 @@
         </ul>
       </td>
     </tr>
-    <tr class="<%= 'justify-content-center  table_row' %>">
-    <td class="author-cell"> Author:  <%= activity.author.username %></td>
-    </tr>
+
   <% end %>
   </tbody>
 

@@ -22,10 +22,7 @@ class SessionsController < ApplicationController
   private
 
   def session_state
-    if logged_in?
-      #flash[:warning] = 'You are already signed in'
-      redirect_to current_user
-    end
+    redirect_to current_user if logged_in?
   end
 
   def logged_in?

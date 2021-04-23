@@ -12,4 +12,3 @@ RSpec.describe User, type: :model do
     expect(test_user.errors[:username]).to include('has already been taken')
   end
 end
-

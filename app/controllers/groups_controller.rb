@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-
   def index
     @groups = Group.all.ordered_by_name
   end

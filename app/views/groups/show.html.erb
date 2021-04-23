@@ -7,7 +7,7 @@
 <div class="group-subtitle my-3 ms-3">Group transactions</div>
 <div class="total-minutes container-fluid d-flex justify-content-between mb-4">
   <div>Total minutes: &nbsp;</div>
-  <div><%= @activities.sum(:amount) %>&nbsp;mins.</div>
+  <div><%= @activities.sum(:amount).round(2) %>&nbsp;mins.</div>
 </div>
 
 
@@ -30,6 +30,9 @@
       <td class="me-2">
         <h2 class="amount"><%= activity.amount.to_s %>&nbsp; mins.</h2>
       </td>
+    </tr>
+    <tr class="<%= 'justify-content-center  table_row' %>">
+      <td class="author-cell"> Author:  <%= activity.author.username %></td>
     </tr>
   <% end %>
   </tbody>

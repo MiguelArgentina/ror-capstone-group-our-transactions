@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def logged_in?
     !!session[:user_id]
   end
@@ -31,5 +30,4 @@ module ApplicationHelper
       render 'layouts/logged_out_user_links'
     end
   end
-
 end
