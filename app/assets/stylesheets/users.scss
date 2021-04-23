@@ -28,7 +28,7 @@ body {
 
     .edit-profile-text {
       font-size: 0.7rem;
-      color: rgba($text-color-light, 0.50);
+      color: rgba($text-color-light, 0.5);
       text-decoration: none;
     }
   }
@@ -36,22 +36,22 @@ body {
   .user-menu-options {
     list-style-type: none;
     margin-left: 15%;
-    div {
 
+    div {
       border-bottom: 0.75px solid rgba($text-color-light, 0.66);
-      .main-screen-icons , a{
-      line-height: 4rem;
-      text-decoration: none;
+
+      .main-screen-icons,
+      a {
+        line-height: 4rem;
+        text-decoration: none;
         font-size: 1.6rem;
-      color: rgba($text-color-light, 0.66);
+        color: rgba($text-color-light, 0.66);
       }
     }
   }
 
   .logout-button {
     border-radius: 50%;
-
     border: 0.75px solid rgba($text-color-light, 0.66);
   }
-
 }

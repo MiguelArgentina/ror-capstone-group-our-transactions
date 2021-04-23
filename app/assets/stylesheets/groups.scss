@@ -34,12 +34,15 @@ body {
   .table_row {
     justify-content: right;
     border-top: 0.75px solid rgba($text-color-light, 0.66);
+
     .image {
       width: 20%;
     }
+
     .description {
       width: 60%;
     }
+
     .actions {
       width: 20%;
     }
@@ -81,8 +84,6 @@ body {
         text-decoration: none;
       }
     }
-
-
   }
 
   .add-group-wrapper {
