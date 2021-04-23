@@ -8,5 +8,6 @@ class CreateActivities < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :activities, [:author_id, :created_at]
   end
 end

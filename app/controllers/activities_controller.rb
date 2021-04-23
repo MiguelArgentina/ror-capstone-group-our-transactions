@@ -1,7 +1,9 @@
 class ActivitiesController < ApplicationController
   def index
+    current_user = User.find(session[:user_id])
+
     @activities = if params[:ungrouped]
-                    User.find(session[:user_id]).activities.all.where(group_id: nil)
+                    current_user.ungrouped_activities_from_user
                   else
                     User.find(session[:user_id]).activities.all
                   end
@@ -9,7 +11,7 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    @groups = Group.all.ordered_by_name
+    @groups = Group.all
     @groups_array = create_groups_array
   end
 
@@ -32,7 +34,7 @@ class ActivitiesController < ApplicationController
   # GET /activity/1/edit
   def edit
     @activity = Activity.find(params[:id])
-    @groups = Group.all.ordered_by_name
+    @groups = Group.all
     @groups_array = create_groups_array
   end
 
