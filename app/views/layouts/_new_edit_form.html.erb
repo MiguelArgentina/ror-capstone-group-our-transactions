@@ -1,4 +1,4 @@
-<%= form_with(model: model) do |f| %>
+<%= form_with(model: model, class: 'form-class') do |f| %>
 
   <% if model.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +14,7 @@
 
   <div class="form-group">
     <%= f.label :name, 'Name' %>
-    <%= f.text_field :name, class: 'form-control mb-4', autofocus: true %>
+    <%= f.text_field :name, class: 'name form-control mb-4', autofocus: true %>
   </div>
 
 

@@ -64,7 +64,8 @@ Visit the [Group my activities](https://obscure-earth-54566.herokuapp.com/users/
 - Run this command in your OS terminal: `git clone git@github.com:MiguelArgentina/ror-capstone-group-our-transactions.git` to get a copy of the project.
 - Navigate to the project's directory using the `cd` command
 - For development usage, please checkout to the navigation branch using this command:  `git checkout navigation`
-- Install gems with: `bundle install` (this will also install rspec gem for testing purposes)
+- Install gems with: `bundle install` 
+- Install rspec gem for testing purposes with: `rails g rspec:install` 
 - Setup database with:
 
 ```

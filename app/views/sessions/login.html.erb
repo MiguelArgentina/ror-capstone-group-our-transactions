@@ -8,14 +8,14 @@
         <div>
           <div class="border border-primary rounded-pill">
             <h1>Login</h1>
-            <%= form_tag '/login' do %>
+            <%= form_tag '/login', name: 'session', class: 'session' do %>
               <div class="container-fluid">
                 <div class="row justify-content-center">
                   <div class="login-fields d-flex justify-content-around my-1 w-75">
-                    Username <%= text_field_tag :username, nil, :class => 'border border-primary ms-2 w-40' %>
+                    Username <%= text_field_tag :username, nil, :class => 'username border border-primary ms-2 w-40' %>
                   </div>
                   <div class="login-fields d-flex justify-content-around my-1 w-75">
-                    Password <%= password_field_tag :password, nil, :class => 'border border-primary ms-2 w-40' %>
+                    Password <%= password_field_tag :password, nil, :class => 'password border border-primary ms-2 w-40' %>
                   </div>
                 </div>
               </div>
