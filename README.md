@@ -48,7 +48,7 @@ Scoreboard page:
 
 ## Live Demo
 
-Visit the [Group my activities](https://obscure-earth-54566.herokuapp.com/users/1) webapp to test my app
+Visit the [Group my activities](https://peaceful-chamber-68618.herokuapp.com/) webapp to test my app
 
 ## Prerequisites
 - Ruby 3.0.
