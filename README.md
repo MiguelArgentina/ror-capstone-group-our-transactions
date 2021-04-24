@@ -15,7 +15,7 @@ Try it, share it with your family and compete against each other!
 
 ## Presentation video
 
-[Clic here to see the video](https://www.loom.com/share/d4f26ef147ee4e78b570d06e6411d8be)
+[Clic here to see the video](https://www.loom.com/share/54d3d6d28adc45bd9b6fa8bede07e487)
 
 ## Screenshots
 
