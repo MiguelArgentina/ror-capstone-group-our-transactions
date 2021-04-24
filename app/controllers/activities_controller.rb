@@ -65,7 +65,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activities_created
-    Activity.ascending.distinct.pluck(:name)
+    Activity.ascending.distinct.order(:name).pluck(:name)
   end
 
   def activity_params
