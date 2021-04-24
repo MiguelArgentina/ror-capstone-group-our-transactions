@@ -49,8 +49,6 @@ describe 'the signin process', type: :feature do
     click_button 'Log in'
 
     visit '/groups/new'
-    within('.form-class') do
-    end
     click_button 'button'
     expect(page).to have_content 'Invalid'
   end
