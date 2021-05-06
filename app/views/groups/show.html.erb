@@ -1,0 +1,48 @@
+<span></span>
+<div class="group-title d-block container-fluid mt-4 text-center">
+  <%= image_tag( groups_image_url_show, class: 'group_avatar img-thumbnail me-2', alt: 'Group avatar') %>
+  <h1 class="group-name"><%= @group.name %></h1>
+</div>
+
+<div class="group-subtitle my-3 ms-3">Group transactions</div>
+<div class="total-minutes container-fluid d-flex justify-content-between mb-4">
+  <div>Total minutes: &nbsp;</div>
+  <div><%= @group.activities.sum(:amount).round(2) %>&nbsp;mins.</div>
+</div>
+
+
+
+
+<table class="w-100">
+
+  <tbody class="groups-listing-table w-100">
+
+  <% @activities.each do |activity| %>
+
+    <tr class="<%= 'justify-content-around  table_row' %>">
+      <td class="image py-3">
+        <%= image_tag(activity_icon_url_in_group_show, class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+      </td>
+      <td class="description me-2">
+        <h2><%= activity.name %></h2>
+        <h3><%= activity.created_at.strftime("%b %d, %H:%M, %Y") %></h3>
+      </td>
+      <td class="me-2">
+        <h2 class="amount"><%= activity.amount.to_s %>&nbsp; mins.</h2>
+      </td>
+    </tr>
+    <tr class="<%= 'justify-content-center  table_row' %>">
+      <td class="author-cell"> Author:  <%= activity.author.username %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to groups_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+  <div class="add-group-wrapper d-block">
+    <i class="material-icons">reply</i>
+    <p>Back</p>
+  </div>
+<% end %>

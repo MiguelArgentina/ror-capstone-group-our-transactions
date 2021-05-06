@@ -1,0 +1,37 @@
+<div class="container-fluid">
+<h1 class="mt-4">Activity name: &nbsp; </h1>
+  <div class="d-flex justify-content-around mt-3">
+    <div class="d-block text-center">
+      <%= image_tag(icon_url_for_activity_show, class: 'activity-group-avatar img-thumbnail', alt: 'Group icon') %>
+      <h2 class="mb-5 mt-3 activity-group-name"><%=  group_icon_div_text %></h2>
+    </div>
+    <h2 class="mb-5 mt-3 activity-name"><%= @activity.name %></h2>
+
+  </div>
+<div>
+
+
+  <div class="activity-subtitle">This activitity was created by: &nbsp; </div>
+<div class="activity-info-text"><%= @activity.author.username %></div>
+</div>
+
+  <div class="mt-3">
+<div class="activity-subtitle">Minutes exercising: &nbsp; </div>
+<div class="activity-info-text"><%= @activity.amount %></div>
+  </div>
+  <div class="mt-3">
+    <div class="activity-subtitle">Date of creation: &nbsp; </div>
+    <div class="activity-info-text"><%= @activity.created_at.strftime("%B %d, %Y") %></div>
+  </div>
+
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+
+  <%= link_to activities_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
+
+</div>
+</div>

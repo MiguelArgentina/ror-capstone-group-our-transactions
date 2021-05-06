@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user1:
+  username: Miguel
+  password_digest: 123456
+
+user2:
+  username: Ubong
+  password_digest: 123456

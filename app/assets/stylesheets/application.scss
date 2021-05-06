@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+*= require material_icons
+*= require_tree .
+ *= require_self
+ */
+
+$main-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+$text-color-light: #dedede;
+
+body {
+  background: linear-gradient(180deg, rgba(55, 120, 194, 1) 35%, rgba(39, 88, 140, 1) 100%);
+
+  .material-icons {
+    color: $secondary-color;
+  }
+
+  label {
+    color: rgba($text-color-light, 0.85);
+  }
+
+  .navbar,
+  .navbar-content-wrapper,
+  .navbar-links {
+    background-color: $main-color;
+  }
+
+  .avatar-image {
+    width: 4rem;
+  }
+
+  .avatar-image-text {
+    font-size: 0.55rem;
+  }
+}

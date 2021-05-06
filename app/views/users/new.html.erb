@@ -1,0 +1,10 @@
+
+
+<% @user.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger alert-dismissible fade show"> <%= message %> </div>
+<%end%>
+
+<h2 class="sign-up-title text-center">Sign up</h2>
+
+<%= render 'users/userform'%>
+

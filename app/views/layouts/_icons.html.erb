@@ -1,0 +1,22 @@
+
+
+<%= f.select :icon, @icons_url %>
+
+
+
+<div class="images_wrapper d-inline-flex flex-wrap border border-primary rounded my-2 col-12">
+<% @icons_url.each_with_index { |photo, i| %>
+
+  <%  next if i == 0 %>
+
+
+  <div class="col-wrapper col-3 col-md-2">
+        <div class="avatar-image-card card m-1 align-items-center w-80">
+          <%=  image_tag( controller_name + photo[1], class: 'avatar-image card-img-top mt-1', alt: photo[0])  %>
+          <div class="card-body">
+            <p class="avatar-image-text card-text text-break" ><%=  photo[0]  %></p>
+          </div>
+        </div>
+  </div>
+  <%  } %>
+</div>

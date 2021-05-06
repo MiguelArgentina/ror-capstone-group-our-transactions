@@ -1,0 +1,25 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "application.scss";
+
+body {
+  h1 {
+    color: $text-color-light;
+    font-size: 2.5rem;
+  }
+
+  .login-fields {
+    color: $text-color-light;
+    font-size: 1.2rem;
+  }
+
+  .login-button {
+    text-decoration: none;
+    border: 0.75px solid $secondary-color;
+
+    a {
+      color: $secondary-color;
+    }
+  }
+}

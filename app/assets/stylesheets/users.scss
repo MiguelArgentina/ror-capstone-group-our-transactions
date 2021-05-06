@@ -1,0 +1,57 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "application.scss";
+
+body {
+  .sign-up-title {
+    color: $text-color-light;
+    font-size: 2.45rem;
+  }
+
+  .sign-up-subtitle {
+    color: $text-color-light;
+    font-size: 1rem;
+  }
+
+  .user-logo-info {
+    .img-thumbnail {
+      display: inline-block;
+      margin: auto;
+      width: 5rem;
+    }
+
+    .user-name {
+      color: $text-color-light;
+      font-size: 1.45rem;
+    }
+
+    .edit-profile-text {
+      font-size: 0.7rem;
+      color: rgba($text-color-light, 0.5);
+      text-decoration: none;
+    }
+  }
+
+  .user-menu-options {
+    list-style-type: none;
+    margin-left: 15%;
+
+    div {
+      border-bottom: 0.75px solid rgba($text-color-light, 0.66);
+
+      .main-screen-icons,
+      a {
+        line-height: 4rem;
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: rgba($text-color-light, 0.66);
+      }
+    }
+  }
+
+  .logout-button {
+    border-radius: 50%;
+    border: 0.75px solid rgba($text-color-light, 0.66);
+  }
+}

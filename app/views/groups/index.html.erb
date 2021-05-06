@@ -1,0 +1,47 @@
+<h1 class="group-index-title text-center mt-2 mb-4">Groups listing</h1>
+
+<table class="w-100">
+
+  <tbody class="groups-listing-table w-100">
+
+  <% @groups.each do |group| %>
+    <tr class="<%= 'justify-content-around table_row' %>">
+      <td class="image">
+        <%= image_tag(groups_image_url(group), class: 'group_avatar img-thumbnail mx-3', alt: 'Group icon') %>
+      </td>
+
+      <td class="description ps-3 me-2">
+        <h2><%= group.name %></h2>
+        <h3><%= group.created_at.strftime("%b %d, %H:%M, %Y") %></h3>
+      </td>
+      <td class="actions">
+        <ul>
+          <li class="group-options my-1 me-1 text-center"><%= link_to 'Show', group %></li>
+          <li class="group-options my-1 me-1 text-center"><%= link_to 'Edit', edit_group_path(group) %></li>
+          <li class="group-options my-1 me-1 text-center"> <%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+        </ul>
+      </td>
+
+    </tr>
+
+  <% end %>
+  </tbody>
+</table>
+
+<div class="add-group-wrapper d-flex justify-content-around mt-5">
+  <%= link_to new_group_path, class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">add_circle_outline</i>
+      <p>New group</p>
+    </div>
+  <% end %>
+
+
+  <%= link_to user_path(session[:user_id]), class: 'edit-profile-text text-decoration-none text-center' do %>
+    <div class="add-group-wrapper d-block">
+      <i class="material-icons">reply</i>
+      <p>Back</p>
+    </div>
+  <% end %>
+
+</div>
